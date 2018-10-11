@@ -1,0 +1,53 @@
+<div class="container">
+
+    <a class="logo"  [routerLink]="['/home']">{{name}}</a>
+    
+
+    <nav class="site-nav" >
+        <ul >
+            <li [routerLinkActive]="['active']" class="nav-item active m-1">
+                <a [routerLink]="['/home']" class="nav-link">
+                    <span class="align-middle">Home</span>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item m-2 ">
+                <a [routerLink]="['/counter']" class="nav-link">
+                    <span class="align-middle">Counter</span>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item m-3">
+                <a [routerLink]="['/servers']" class="nav-link">
+                    <span class="align-middle">Servers</span> 
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item m-4">
+                <a [routerLink]="['/material']" class="nav-link">
+                   <span class="align-middle">Material</span> 
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item m-5">
+                <a [routerLink]="['/tune']" class="nav-link">
+                   <span class="align-middle">Tune</span> 
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item m-6">
+                <a [routerLink]="['/photo']" class="nav-link" >
+                    <span class="align-middle">Photo</span> 
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <button md-button [mdMenuTriggerFor]="menu" class="menu"><md-icon>more_vert</md-icon></button>   
+</div>
+
+
+<md-menu #menu="mdMenu" class="items" >
+        <button md-menu-item routerLink="/home"><i class="material-icons md-24 md-light align-middle">home</i>Home </button>
+        <button md-menu-item routerLink="/counter"><i class="material-icons md-18 align-middle ">radio_button_unchecked</i>Counter</button>
+        <button md-menu-item routerLink="/servers"><i class="material-icons md-18 align-middle">list</i>Servers</button>
+        <button md-menu-item routerLink="/material"><i class="material-icons md-18 align-middle">web_asset</i>Material</button>
+        <button md-menu-item routerLink="/photo"><i class="material-icons md-18 align-middle">photo</i>Photo</button>
+</md-menu>
+
+
+  

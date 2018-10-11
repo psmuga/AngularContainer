@@ -1,0 +1,49 @@
+<form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <table class="fullwidth" cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container class="fullwidth">
+            <input type="text" mdInput placeholder="First Name" id="firstname" [(ngModel)]="address.firstName"name="firstname" required #firstName="ngModel">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="fullwidth">
+            <input type="text" mdInput placeholder="Last Name" id="lastname" [(ngModel)]="address.lastName"name="lastname" required>
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <md-input-container class="fullwidth">
+      <textarea mdInput placeholder="Address" id="address" [(ngModel)]="address.address" name="address"></textarea>
+    </md-input-container>
+  </p>
+
+  <table class="fullwidth" cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container class="fullwidth">
+            <input type="text" mdInput placeholder="City" id="city" [(ngModel)]="address.city"name="city" required>
+            <!-- pattern="" też może byc -->
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="fullwidth">
+            <input type="text" mdInput placeholder="State" id="state" [(ngModel)]="address.state" name="state">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="fullwidth">
+            <input #postalcode type="text" maxlength="5" mdInput placeholder="Postal Code" id="postalcode" [(ngModel)]="address.postalCode" name="postalcode">
+            <md-hint align="end" >
+              {{postalcode.value.length}} / 5
+            </md-hint>
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <button type="submit" md-raised-button [disabled]="myForm.invalid">Submit</button>
+  </p>
+</form>

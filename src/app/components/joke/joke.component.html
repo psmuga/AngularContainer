@@ -1,0 +1,21 @@
+<!-- <div class="card card-block card-outline-primary" appCardHover [config]="{querySelector:'p'}"> => 1
+<div class="card card-block card-outline-primary" [appCardHover]="{querySelector:'.card-text'}">  => 2 -->
+<div class="card card-block card-outline-primary" appCardHover>
+    <h4 class="card-title">
+      <ng-content select=".setup"></ng-content>
+    </h4>
+    <p class="card-text"
+       [hidden]="data.hide">
+      <ng-content select=".punchline"></ng-content>
+    </p>
+    <div class="row" >
+      <!-- <div class="col-6"> -->
+          <button class="btn btn-outline-primary btn-sm" (click)="data.toggle()">Tell Me</button>
+      <!-- </div> -->
+      <!-- <div class="col"> -->
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteJoke()">Delete Me</button>
+      <!-- </div> -->
+    </div>
+    
+    
+  </div>

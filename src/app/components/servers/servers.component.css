@@ -1,0 +1,22 @@
+/* p{
+    color: red;
+} */
+
+.online{
+    color: #ffffff;
+    font-weight: 700;
+}
+.card-text{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.card{
+    margin-bottom: 1em;
+}
+.tab{
+    margin-bottom: 2em;
+}
+button{
+    margin-top: 1em;
+}

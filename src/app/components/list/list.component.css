@@ -1,0 +1,10 @@
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+md-toolbar{
+    margin-top: 1em;
+}
+.example-card{
+    margin: 0.5em 0 0.5em 0;
+}

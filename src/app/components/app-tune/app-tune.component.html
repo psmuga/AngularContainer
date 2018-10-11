@@ -1,0 +1,69 @@
+<!-- <form class="form-inline">
+  <div class="form-group">
+    <input type="search"
+           class="form-control"
+           placeholder="Enter search string"
+           #search> 
+  </div>
+  <button class="btn btn-primary"
+          (click)="doSearch(search.value)"> 
+          Search
+  </button>
+</form>
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let track of itunes.results">
+    <img src="{{track.thumbnail}}">
+    <a target="_blank"
+       href="{{track.link}}">{{ track.name }}
+    </a>
+  </li>
+</ul> -->
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <input type="search"
+           class="form-control"
+           placeholder="Enter search string"
+           [formControl]="searchField"
+           [ngModel]="help"
+           #search>
+  </div>
+  <button class="btn btn-primary"
+  (click)="onSearch(search.value)"> 
+  Search
+  </button>
+</form>
+
+
+
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<!-- automat -->
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let track of results | async">
+    <img src="{{track.thumbnail}}">
+    <a target="_blank"
+       href="{{track.link}}">{{ track.track }}
+    </a>
+  </li>
+</ul>
+
+
+<div class="list-group">
+  <a [routerLink]="['/artist',track.artistId]"
+     class="list-group-item list-group-item-action"
+     *ngFor="let track of itunes.results">
+    <p><img src="{{track.thumbnail}}"> {{ track.track }} <span class="text-muted"> by </span> {{ track.artist }}</p>
+  </a>
+</div>

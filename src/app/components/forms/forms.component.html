@@ -1,0 +1,74 @@
+<!-- <form novalidate>
+    <fieldset>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text"
+               class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text"
+               class="form-control">
+      </div>
+    </fieldset>
+  
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email"
+             class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password"
+             class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label>Language</label>
+      <select class="form-control">
+        <option value="">Please select a language</option>
+      </select>
+    </div>
+  </form> -->
+  
+
+<div class="cont" [hidden]="submitted">
+  <form novalidate [formGroup]="myform" (ngSubmit)="onSubmit()">
+    <div formGroupName="name">
+      <md-form-field  class="ro">
+        <input mdInput placeholder="First Name"  formControlName="firstName" required>
+      </md-form-field>
+      <md-form-field class="ro">
+        <input mdInput placeholder="Last Name" formControlName="lastName" required>
+      </md-form-field>
+    </div>
+    
+    <md-form-field class="ro">
+      <input  type="email" mdInput placeholder="Email" formControlName="email" required >
+      <md-error *ngIf="myform.controls.email.hasError('pattern')">
+        Please enter a valid email address
+      </md-error>
+      <md-error *ngIf="myform.controls.email.hasError('required')">
+        Email is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <md-form-field class="ro">
+      <input type="password" mdInput placeholder="Password" formControlName="password" required>
+    </md-form-field>
+    <md-select placeholder="Language"class="ro" formControlName="language" >
+      <md-option>Please select a language</md-option>
+      <md-option *ngFor="let lang of langs" [value]="lang">{{ lang}}</md-option>
+    </md-select>
+    <button type="submit" class=" ro btn btn-primary" [disabled]="!myform.valid" >Submit</button>
+
+  <md-form-field class="ro">
+    <input mdInput type="search" placeholder="Please enter search term" [formControl]="searchField">
+  </md-form-field>
+  <ul>
+      <li *ngFor="let search of searches">{{ search }}</li>
+  </ul>
+  </form>
+  <pre>{{myform.value | json}}</pre>
+</div>

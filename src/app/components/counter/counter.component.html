@@ -1,0 +1,33 @@
+
+
+<!-- <p>Current count: <strong>{{ currentCount }}</strong></p>
+
+<button (click)="incrementCounter()">Increment</button>
+<button (click)="decrementCounter()" [disabled]="!isActive">Decrement</button> -->
+
+
+<div class="body">
+    <div class="sidebar">
+        <div class="logo">Awesome<span>Portfolio</span></div>
+        <nav>
+            <a  [routerLink]="['/counter']" class="nav-item " [routerLinkActive]="['active']">Portfolio</a>
+            <a  [routerLink]="['']" class="nav-item" >Home</a>
+            <a  [routerLink]="['/list']" class="nav-item" >List</a>
+            
+            <a  class="nav-item" [routerLink]="['/http']" >Http</a>
+        </nav>
+        </div>
+        
+        <div class="main-content">
+        <div class="portfolio">
+            <div class="portfolio-item medium"><button md-raised-button (click)="incrementCounter()">Increment</button></div>
+            <div class="portfolio-item large two">Current count:  {{currentCount}}</div>
+            <div class="portfolio-item medium"><button md-raised-button (click)="decrementCounter()" [disabled]="!isActive">Decrement</button></div>
+            <div class="portfolio-item small">{{ observable | async }}</div>
+            <div class="portfolio-item tall">five</div>
+            <div class="portfolio-item wide">six</div>
+            <div class="portfolio-item wide">six</div>
+            <div class="portfolio-item medium">one</div>
+        </div>
+    </div>
+</div>

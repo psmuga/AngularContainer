@@ -1,0 +1,70 @@
+
+<md-card >
+  <md-card-header>
+    <md-card-title>Title </md-card-title>     
+  </md-card-header>
+  <md-card-content>
+    <span mdTooltip="This is the tooltip!" mdTooltipPosition="above"><b> text has tooltip!</b></span>
+  </md-card-content>
+  <md-card-actions>
+      <pre ngNonBindable>{{duration}}</pre>
+
+      pipes
+      <p>{{ 1234.56 | currency : 'USD' | lowercase}}</p>
+      <p>{{ 1234.56 | currency : 'USD':true }}</p>
+      <p>{{ dateVal | date: 'shortTime' }}</p>
+      <p>{{ dateVal | date: 'fullDate' }}</p>
+      <p>{{ dateVal | date: 'd/M/y' }}</p>
+
+      <p>{{ 3.14159265 | number: '3.1-2' }}</p>
+      <p>{{ 3.14159265 | number: '1.4-4' }}</p>
+
+      <p>{{ jsonVal | json }}</p>
+
+      <p>{{ 0.123456 | percent }}</p>
+      <p>{{ 0.123456 | percent: '2.1-2' }}</p>
+      <p>{{ 0.123456 | percent : "10.4-4" }}</p>
+
+      <p>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:2 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:2:-1 }}</p>
+      <ul>
+        <li *ngFor="let v of [1,2,3,4,5,6] | slice:2:-1"> 
+          {{v}}
+        </li>
+      </ul>
+
+    <button md-raised-button (click)="openSnackbar()">open snackbar</button>
+  </md-card-actions>
+</md-card>
+
+<md-card >
+  <md-card-header>
+    <md-card-title>Todo</md-card-title>     
+  </md-card-header>
+  <md-card-content>
+    <app-todo></app-todo>
+  </md-card-content>
+</md-card>
+
+
+<app-dialog></app-dialog>
+
+<md-card >
+  <md-card-header>
+    <md-card-title>Form</md-card-title>     
+  </md-card-header>
+  <md-card-content>
+    <app-form></app-form>
+  </md-card-content>
+</md-card>
+
+<md-card >
+  <md-card-header>
+    <md-card-title>List</md-card-title>     
+  </md-card-header>
+  <md-card-content>
+    <app-list></app-list>
+  </md-card-content>
+</md-card>
+
